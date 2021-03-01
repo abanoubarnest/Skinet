@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { AccountService } from '../account/account.service';
 import { BasketService } from '../basket/basket.service';
-import { Observable } from 'rxjs';
 import { IBasketTotals } from '../shared/models/basket';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-checkout',
@@ -32,6 +33,7 @@ export class CheckoutComponent implements OnInit {
         city: [null, Validators.required],
         state: [null, Validators.required],
         zipcode: [null, Validators.required],
+        phoneNumber:[null, Validators.required]
       }),
       deliveryForm: this.fb.group({
         deliveryMethod: [null, Validators.required]

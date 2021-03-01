@@ -1,18 +1,19 @@
-import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IPagination, Pagination } from '../shared/models/pagination';
+import { delay, map } from 'rxjs/operators';
+
 import { IBrand } from '../shared/models/brand';
-import { IType } from '../shared/models/productType';
-import { map, delay } from 'rxjs/operators';
-import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
+import { IType } from '../shared/models/productType';
+import { Injectable } from '@angular/core';
+import { ShopParams } from '../shared/models/shopParams';
 import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = 'https://localhost:44376/api/';
   products: IProduct[] = [];
   brands: IBrand[] = [];
   types: IType[] = [];

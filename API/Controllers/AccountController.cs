@@ -49,11 +49,14 @@ namespace API.Controllers
 
         [Authorize]
         [HttpGet("address")]
-        public async Task<ActionResult<AddressDto>> GetUserAddress()
+        public async Task<ActionResult<AdressDTO>> GetUserAddress()
         {
+         
             var user = await _userManager.FindByUserByClaimsPrincipleWithAddressAsync(HttpContext.User);
-
-            return _mapper.Map<Address, AddressDto>(user.Address);
+           
+            var item= _mapper.Map<Address, AdressDTO>(user.Address);
+            item.PhoneNumber = user.PhoneNumber;
+            return item;
         }
 
         [Authorize]

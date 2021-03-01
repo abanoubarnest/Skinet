@@ -5,16 +5,16 @@
                 <cdk-step [label]="'Address'" [completed]="(checkoutForm.get('addressForm')).valid">
                     <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
                 </cdk-step>
-                <cdk-step [label]="'Delivery'" 
+                <cdk-step [label]="'Delivery'"
                     [completed]="(checkoutForm.get('deliveryForm')).valid">
                 <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
                 </cdk-step>
                 <cdk-step [label]="'Review'">
                     <app-checkout-review [appStepper]="appStepper"></app-checkout-review>
                 </cdk-step>
-                <cdk-step [label]="'Payment'">
+                <!-- <cdk-step [label]="'Payment'">
                     <app-checkout-payment [checkoutForm]="checkoutForm"></app-checkout-payment>
-                </cdk-step>
+                </cdk-step> -->
             </app-stepper>
         </div>
         <div class="col-4">

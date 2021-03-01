@@ -1,9 +1,9 @@
 <div class="mt-4" [formGroup]="checkoutForm">
     <div class="d-flex justify-content-between align-items-center">
         <h4>Shipping address</h4>
-        <button 
-            (click)="saveUserAddress()" 
-            [disabled]="!checkoutForm.get('addressForm').valid || 
+        <button
+            (click)="saveUserAddress()"
+            [disabled]="!checkoutForm.get('addressForm').valid ||
                 !checkoutForm.get('addressForm').dirty"
             class="btn btn-outline-success mb-3">
             Save as default address
@@ -28,6 +28,10 @@
         <div class="form-group col-6">
             <app-text-input [label]="'Zip Code'" formControlName="zipcode"></app-text-input>
         </div>
+        <div class="form-group col-6">
+          <app-text-input [label]="'Phone Number'" formControlName="phoneNumber"></app-text-input>
+      </div>
+
     </div>
 </div>
 
@@ -36,6 +40,6 @@
         <i class="fa fa-angle-left"></i> Back to Basket
     </button>
     <button [disabled]="checkoutForm.get('addressForm').invalid" class="btn btn-primary" cdkStepperNext>
-        Go to Delivery <i class="fa fa-angle-right"></i> 
+        Go to Delivery <i class="fa fa-angle-right"></i>
     </button>
 </div>
